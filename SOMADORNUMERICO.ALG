@@ -1,18 +1,19 @@
 algoritmo "somadornumerico"
 var
-   cont, s, n, maior, menor: inteiro
+   s, n, maior: inteiro
+   resp: caractere
 inicio
-   cont <- 1
    s <- 0
-   enquanto (cont <=5) faca
-      Escreva ("Digite o ", cont, "º valor: ")
+   Repita
+      Escreva ("Digite o valor: ")
       Leia(n)
       Se (n>maior) entao
          maior <- n
       Fimse
-      cont <- cont + 1
-      S <- S + n
-   FimEnquanto
+      s <- s + n
+      Escreva("Você quer continuar? [S/N]")
+      Leia(resp)
+   Ate (resp = "N")
    EscrevaL("A soma de todos os números é: ",s)
    Escreval("O maior valor digitado foi: ", maior)
 fimalgoritmo
