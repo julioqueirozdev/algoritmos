@@ -1,11 +1,34 @@
 algoritmo "CinemaVetor"
 var
-   cad: vetor [1..10] de inteiro
-   c: inteiro
-inicio
-   Para c <- 1 ate 10 faca
-      Escreva("[ B ", c," ]")
-      cad[c] <- c
+   B: vetor [1..10] de caractere
+   l, cad: inteiro
+   r: caractere
+procedimento MostrarFileira()
+var i: inteiro
+Inicio
+   Para i <- 1 ate 10 faca
+      Se (B[i] = "") entao
+         Escreva ("[ B", i:2, " ]")
+      senao
+         Escreva ("[ --- ]")
+      FimSe
    Fimpara
-   Escreval("Escolha uma cadeira: ")
+   Escreval()
+   Escreval("---------------------------------------------------")
+Fimprocedimento
+inicio
+   Repita
+      Limpatela
+      MostrarFileira()
+      Escreva("Reservar a cadeira: B")
+      Leia(cad)
+      Se (B[cad]="") entao
+         B[cad] <- "X"
+         EscrevaL("Cadeira B", cad, " RESERVADA!")
+      Senao
+         EscrevaL("ERRO: Lugar Ocupado!")
+      FimSe
+      Escreva("Quer reservar outro? [S/N] ")
+      Leia(r)
+   Ate (r = "N")
 fimalgoritmo
